@@ -1,0 +1,51 @@
+<version 1.2>
+
+<magichost deploy>
+  <set>
+    MarchexBase     ${MARCHEX_BASE}
+  </set>
+</magichost>
+
+<host busmonitor1.sad busmonitor2.sad>
+  <set>
+    MarchexBase   /site/asq
+    DatabaseHost      busmonitordb.sea1.marchex.com
+    DatabaseName      asq
+    DatabaseUsername  asq
+    DatabasePassword  !!!PROD_BACKEND_PASSWORD!!!
+  </set>
+  AddTemplate ../config/database.yml config
+</host>
+
+<host busmonitor1.qa busmonitor2.qa>
+  <set>
+    MarchexBase   /site/asq
+    DatabaseHost      qa-busmonitordb.sea1.marchex.com
+    DatabaseName      asq
+    DatabaseUsername  asq
+    DatabasePassword  !!!BACKEND_PASSWORD!!!
+  </set>
+  AddTemplate ../config/database.yml config
+</host>
+
+<host busmonitorbiz1.sad>
+  <set>
+        MarchexBase   /site/asq
+        DatabaseHost      busmonitorbizdb.sad.marchex.com
+        DatabaseName      asq
+        DatabaseUsername  asq
+        DatabasePassword  !!!MCACR_BACKEND_PASSWORD!!!
+  </set>
+  AddTemplate ../config/database.yml config
+</host>
+
+<host bestasqmcacr1.sad bestasqmcacr2.sad>
+  <set>
+    MarchexBase   /site/asq
+    DatabaseHost      busmonitordb.sea1.marchex.com
+    DatabaseName      asq_mcacr
+    DatabaseUsername  asq_mcacr_ow
+    DatabasePassword  !!!MCACR_BACKEND_PASSWORD!!!
+  </set>
+  AddTemplate ../config/database.yml config
+</host>
